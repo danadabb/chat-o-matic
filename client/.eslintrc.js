@@ -1,21 +1,21 @@
 module.exports = {
   parser: "@typescript-eslint/parser", // Specifies the ESLint parser
-  plugins: ["prettier"],
+  plugins: ["@typescript-eslint",  "prettier"],
   extends: [
+    "prettier",
     "plugin:react/recommended", // Uses the recommended rules from @eslint-plugin-react
     "plugin:@typescript-eslint/recommended", // Uses the recommended rules from @typescript-eslint/eslint-plugin
     "airbnb",
     "airbnb-typescript",
-    "prettier",
   ],
-  ignorePatterns: [".eslintrc.js"],
+  ignorePatterns: ["webpack.config.js", ".eslintrc.js"],
   parserOptions: {
     sourceType: "module", // Allows for the use of imports
     ecmaFeatures: {
       jsx: true, // Allows for the parsing of JSX
     },
-    project: "tsconfig.json",
-    tsconfigRootDir: "./",
+    project: "../tsconfig.json",
+    tsconfigRootDir: __dirname,
   },
   rules: {
     // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
