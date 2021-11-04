@@ -1,7 +1,7 @@
 import React from 'react';
-import getMessages from '../api/queries/message';
-import Message from './components/Message';
-import MessageContainer from './components/MessageList';
+import getMessages from '../../../api/queries/message';
+import Message from './Message';
+import MessageContainer from './MessageContainer';
 
 type MessageProps = {
   user: string;
