@@ -1,4 +1,5 @@
-import { useQuery, gql } from "@apollo/client";
+import { useQuery, gql, QueryResult } from '@apollo/client';
+import { Message } from '@types';
 
 const GET_MESSAGES = gql`
   query {
@@ -10,6 +11,10 @@ const GET_MESSAGES = gql`
   }
 `;
 
-const getMessages = () => useQuery(GET_MESSAGES)
+interface MessageData {
+  messages: Message[]
+}
 
-export default getMessages
+const getMessages = (): QueryResult<MessageData> => useQuery<MessageData>(GET_MESSAGES);
+
+export default getMessages;
