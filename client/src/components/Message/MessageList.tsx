@@ -1,5 +1,6 @@
 import React from 'react';
 import getMessages from '../../../api/queries/message';
+import UserIcon from '../UserIcon';
 import Message from './Message';
 import MessageContainer from './MessageContainer';
 
@@ -17,9 +18,8 @@ const Messages = ({ user }: MessageProps): JSX.Element | null => {
     <>
       {data.messages.map(({ id, user: MessageUser, content }) => (
         <MessageContainer key={id} sameUser={user === MessageUser}>
+          {user !== MessageUser && <UserIcon user={MessageUser} />}
           <Message sameUser={user === MessageUser}>
-            {id}
-            {MessageUser}
             {content}
           </Message>
         </MessageContainer>

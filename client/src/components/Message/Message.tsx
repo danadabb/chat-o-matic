@@ -5,11 +5,11 @@ type Props = {
 };
 
 const Message = styled.div<Props>`
-  background: ${(props) => (props.sameUser ? 'DARKCYAN' : 'GREY')};
-  color: white;
+  background: ${(props) => (props.sameUser ? 'DARKCYAN' : 'LIGHTGREY')};
+  color:  ${(props) => (props.sameUser ? 'WHITE' : 'BLACK')};;
   padding: 15px;
   margin-bottom: 10px;
-  border-radius: 15px;
+  border-radius: 20px;
   font-family: Arial, sans-serif;
 `;
 
